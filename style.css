@@ -1,0 +1,301 @@
+body{
+  background:  #fff;
+  margin: 0px;
+  padding: 0px;
+}
+header{
+  color: rgb(15, 60, 78);
+  margin: 10px 20px 20px 60px;
+  font-size: 1.5rem;
+  font-family: 'lato', sans-serif;
+  justify-content: center;
+  font-weight: bold;
+}
+h1 {
+  padding: 10px;
+  margin-top: 0px;
+}
+#buut > button {
+  background: #d8aa14;
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: 'Roboto-condensed', sans-serif;
+  cursor: pointer;
+}
+#buut > button:hover{
+  background: #d8aa14d7;
+}
+.container >*{
+  align-content: center;
+}
+.container{
+  display: grid;
+  grid-gap: 5px;
+  width: 95%;
+  margin: 20px auto;
+  grid-template-areas: 
+  "book book catalogue"
+  "book book catalogue"
+  "library library library";
+}
+#new-btn {
+  grid-area: book;
+  min-height: 250px;
+  display: grid;
+  grid-gap: 100px;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas: 
+  "word button";
+}
+#word{
+  grid-area: word;
+  width: 300px;
+  height: 300px;
+  line-height: 30px;
+  font-family: 'Roboto-condensed', sans-serif;
+  text-align: center;
+  color: rgb(41, 32, 10);
+}
+
+#buut{
+  grid-area: button;
+  justify-content: center;
+  align-self: center;
+}
+
+#cata-con{
+  grid-area: catalogue;
+  display: grid;
+  justify-items: center;
+}
+
+#catalogue{
+  display: grid;
+  width: 70%;
+  justify-content: center;
+  background: rgba(51, 51, 51, 0.308);
+  height: 300px;
+  border-radius: 5px;
+  font-family: 'lato', sans-serif;
+  font-size: 1.2em;
+}
+
+.books{
+  grid-area: library;
+  min-height: 200px;
+  display: grid;
+  padding: 10px;
+}
+.book-shelf {
+  display: flex;
+  flex-direction: row;
+  margin: 25px;
+  flex-wrap: wrap;
+}
+#book{
+  display: grid;
+  grid-template-areas: 
+  "name pag"
+  "auth read"
+  "fini dell";
+  margin: 10px ;
+  border: 2px solid rgb(23, 83, 107);
+  font-family: 'lato', sans-serif;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.title {
+  grid-area: name;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+  border-right: 2px solid rgb(26, 56, 68);
+  min-width: 130px;
+
+}
+
+.pages{
+  grid-area: pag;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 10px;
+}
+.author {
+  grid-area: auth;
+  text-align: center;
+  font-size: 1.09em;
+  padding: 10px;
+  border-top: 2px solid rgb(23, 83, 107);
+  border-bottom: 2px solid rgb(23, 83, 107);
+  border-right: 2px solid rgb(26, 56, 68);
+  min-width: 130px;
+}
+.bks {
+  grid-area: read;
+  text-align: center;
+  font-size: 1.09em;
+  padding: 10px 2px;
+  border-top: 2px solid rgb(23, 83, 107);
+  border-bottom: 2px solid rgb(23, 83, 107);
+}
+.read {
+  grid-area: fini;
+}
+.delb{
+  grid-area: dell;
+}
+#book > button {
+  background: rgba(51, 51, 51, 0.308);
+  color:  rgb(26, 56, 68);
+  padding: 3px 18px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+}
+#book > button:hover{
+  background: rgba(51, 51, 51, 0.274)
+}
+.form-wrapper {
+  display: none;
+  min-width: 95vw;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.7);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  margin: 0 auto;
+  transition: 300ms ease-in-out;
+}
+.wrap {
+  width: 500px;
+  height: 420px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 18px;
+  position: relative;
+}
+.close{
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.form {
+  width: 60%;
+  margin: 12px auto;
+  padding: 8px;
+  font-size: 0.9em;
+  font-weight: 300;
+  font-family: 'roboto condensed', sans-serif;
+  border-radius: 4px;
+}
+
+.form-button{
+  background: rgba(51, 51, 51, 0.452);
+  color:  rgb(26, 56, 68);
+  padding: 8px 30px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+}
+.form-button:hover{
+  background: rgba(51, 51, 51, 0.288);;
+}
+#n-book {
+  font-family: 'lato', sans-serif;
+  font-size: 1.5em;
+  color: rgb(23, 83, 107);
+  font-weight: 700;
+}
+#card{
+  display: flex;
+  flex-direction: column;
+}
+#cata-title{
+  margin: 18px auto 40px auto;
+  color: rgb(97, 84, 10);
+  padding: 10px;
+  border-top: 2px solid rgb(15, 60, 78);
+  border-bottom: 2px solid rgb(15, 60, 78);
+}
+#book-no, #no-of-read{
+  margin-bottom: 20px;
+  color: rgb(23, 83, 107)
+}
+
+#a-details{
+  margin-top: 20px;
+  padding: 0px;
+  color: rgb(23, 83, 107);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+p{
+  padding: 20px;
+}
+footer{
+  text-align: center;
+  font-family: 'lato', sans-serif;
+  font-size: 1.2em;
+  background: rgba(51, 51, 51, 0.308);
+  margin-bottom:0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 90%;
+    grid-template-areas: 
+  "book book"
+  "catalogue catalogue"
+  "library library"
+  }
+  header{
+    margin: auto 10px;
+  }
+  #books{
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .book-shelf{
+    margin: auto;
+  }
+  #new-btn{
+    grid-template-areas: 
+    "word"
+    "button";
+    grid-gap: 0;
+    margin: 20px auto;
+  }
+  #buut{
+    margin: auto;
+  }
+}

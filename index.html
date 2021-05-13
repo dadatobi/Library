@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Library</title>
+</head>
+<body>
+  <header>
+    <h1>My Library</h1>
+  </header>
+  <div class="container">
+    <div id="new-btn">
+      <div id="word">
+        <p>"Libraries store the energy that fuels the imagination. They open up windows to the world and inspire us to explore and achieve, and contribute to improving our quality of life."
+        </p>
+        <q>Sidney Sheldon</q>
+      </div>
+      <div id="buut">
+        <button id='btn'>+ New Book</button>
+      </div>
+    </div>
+    <div id='cata-con'>
+      <div id="catalogue">
+      </div>
+    </div>  
+    <div class="form-wrapper">
+      <div class="wrap">
+        <div class="close">+</div>
+        <p id="n-book">Add New Book</p>
+        <form id="pop-up">
+          <div class="formbox">
+            <input type="text" class="form" id="title" placeholder="Title" required>
+          </div>
+          <div class="formbox">
+            <input type="text" class="form" id="author" placeholder="Author" required>
+          </div>
+          <div class="formbox">
+            <input type="number" class="form" id="pages" placeholder="Number of pages" required>
+          </div>
+          <div>
+            <select name="read-staus" id="checkread" class="form">
+              <option value="Unfinished"> Unfinished</option>
+              <option value="Finished"> Finished</option>
+            </select>
+          </div>
+          <div class="formbox">
+            <button type="submit" class="form-button">Add Books</button> 
+      </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="books">
+     <div class='book-shelf'></div> 
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <footer>
+    <p>check out my Github @ <a href="https://github.com/dadatobi">github.com/dadatobi</a></p>
+  </footer>
+</body>
+</html>
