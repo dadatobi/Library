@@ -195,7 +195,7 @@ h1 {
   cursor: pointer;
 }
 
-.form {
+.form, label {
   width: 60%;
   margin: 12px auto;
   padding: 8px;
