@@ -1,5 +1,6 @@
-let myLibrary = [{ title: "5a.m club", author: "Robin Sharma", pages: "1000", isRead: "Finished" },
-{ title: "Phoenix", author: "Russ Doe", pages: "1000", isRead: "Unfinished" }];
+let myLibrary;
+myLibrary = [{ title: "5a.m club", author: "Robin Sharma", pages: "1000", readState: "Finished" },
+{ title: "Phoenix", author: "Russ Doe", pages: "1000", readState: "Unfinished" }];
 
 const bookForm = document.querySelector('#btn');
 const form = document.querySelector('.form-wrapper');
@@ -11,21 +12,21 @@ const caDiv = document.querySelector('#catalogue');
 
 
 class Book {
-  constructor(title, author, pages, isRead) {
+  constructor(title, author, pages, readState) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.isRead = isRead;
+    this.readState = readState;
   }
 };
 
-function addBookToLibrary(title, author, pages, isRead) {
+function addBookToLibrary(title, author, pages, readState) {
   title = document.querySelector('#title').value;
   author = document.querySelector('#author').value;
   pages = document.querySelector('#pages').value;
-  isRead = document.querySelector('#checkread').value;
+  readState = document.querySelector('#checkread').value;
 
-  const newBook = new Book(title, author, pages, isRead);
+  const newBook = new Book(title, author, pages, readState);
   if (myLibrary.some((book) => book.title === newBook.title) && myLibrary.some((book) => book.author === newBook.author)) {
     alert('You already have the book');
     return;
@@ -56,7 +57,7 @@ function myLibraryCount() {
   cataCard.appendChild(caBooks);
 
   caRead.setAttribute('id', 'no-of-read');
-  const readCount = myLibrary.filter((book)=>book.isRead === 'Finished');
+  const readCount = myLibrary.filter((book)=>book.readState === 'Finished');
   caRead.textContent ='Number of Book(s) finished: '+ readCount.length
   cataCard.appendChild(caRead);
 
@@ -106,7 +107,7 @@ function acceptBooks(items) {
   authorDiv.classList.add('author');
   bookDiv.appendChild(authorDiv);
 
-  bookStatus.textContent = items.isRead;
+  bookStatus.textContent = items.readState;
   bookStatus.classList.add('bks');
   bookDiv.appendChild(bookStatus);
 
@@ -128,32 +129,23 @@ function acceptBooks(items) {
   });
 
   readBtn.addEventListener('click', ()=>{
-    switch(items.isRead){
+    switch(items.readState){
       case 'Finished':
-        items.isRead = 'Unfinished';
-        bookStatus.textContent = items.isRead;
+        items.readState = 'Unfinished';
+        bookStatus.textContent = items.readState;
         break;
       case 'Unfinished':
-        items.isRead = 'Finished';
-        bookStatus.textContent = items.isRead;
+        items.readState = 'Finished';
+        bookStatus.textContent = items.readState;
         break;
     }
     saveToLs();
     displayBooks();
-  })
-}
-
+  });
+};
 function closePopUp() {
   form.style.display = 'none';
 };
-
-bookForm.addEventListener('click', () => {
-  form.style.display = 'flex';
-});
-
-addBook.addEventListener('click', newBookInput);
-
-closeForm.addEventListener('click', closePopUp);
 
 function saveToLs() {
   localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
@@ -164,11 +156,23 @@ function restoreFromLs() {
   if(!localStorage.myLibrary) {
       displayBooks();
   }else {
-      let objects = localStorage.getItem('myLibrary')
+      objects = localStorage.getItem('myLibrary')
       objects = JSON.parse(objects);
       myLibrary = objects;
       displayBooks();
   }
 }
 
+function eventListener(){
+  bookForm.addEventListener('click', () => {
+    form.style.display = 'flex';
+  });
+
+  addBook.addEventListener('click', newBookInput);
+
+  closeForm.addEventListener('click', closePopUp);
+
+};
+
+eventListener();
 restoreFromLs();
