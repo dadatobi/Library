@@ -75,7 +75,7 @@ h1 {
 
 #catalogue{
   display: grid;
-  width: 70%;
+  width: 300px;
   justify-content: center;
   background: rgba(51, 51, 51, 0.308);
   height: 300px;
